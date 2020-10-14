@@ -1,4 +1,4 @@
-#include <Windows.h>
+#include <Windows.h>  //windows libary
 
 LRESULT CALLBACK MainWindowProc(HWND hWnd, UINT msg, WPARAM wp, LPARAM lp);
 
@@ -6,8 +6,9 @@ LRESULT CALLBACK MainWindowProc(HWND hWnd, UINT msg, WPARAM wp, LPARAM lp);
 int WINAPI WinMain(HINSTANCE hInst, HINSTANCE hPrevInst, LPSTR args, int ncmdshow) {
 
 	WNDCLASSW wc = { 0 };
-	wc.hbrBackground = (HBRUSH)COLOR_WINDOW;
-	wc.hCursor = LoadCursor(NULL, IDC_ARROW);
+	wc.hbrBackground = (HBRUSH)COLOR_WINDOW; // backgroundcolor
+        //wc.hbrBackground = CreateSolidBrush (RGB(255, 0, 0);// Red backgroundcolor
+	wc.hCursor = LoadCursor(NULL, IDC_ARROW); // Arrow cursor
 	wc.hInstance = hInst;
 	wc.lpszClassName = L"MainWndClass";
 	wc.lpfnWndProc = MainWindowProc;
@@ -15,6 +16,7 @@ int WINAPI WinMain(HINSTANCE hInst, HINSTANCE hPrevInst, LPSTR args, int ncmdsho
 	if (!RegisterClassW(&wc))
 		return -1;
 
+//Create the window:
 	CreateWindowW(
 		L"MainWndClass", L"Window Title",
 		WS_OVERLAPPEDWINDOW | WS_VISIBLE,
@@ -30,7 +32,7 @@ int WINAPI WinMain(HINSTANCE hInst, HINSTANCE hPrevInst, LPSTR args, int ncmdsho
 	return 0;
 }
 
-
+//The window procedure:
 LRESULT CALLBACK MainWindowProc(HWND hWnd, UINT msg, WPARAM wp, LPARAM lp) {
 
 	switch (msg) {
