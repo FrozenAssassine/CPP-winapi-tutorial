@@ -5,7 +5,6 @@ LRESULT CALLBACK MainWindowProc(HWND hWnd, UINT msg, WPARAM wp, LPARAM lp);
 #define MB_ITEM_1 1
 #define MB_ITEM_2 2
 #define MB_ITEM_3 3
-
 #define MB_ITEM_4 4
 #define MB_ITEM_5 5
 
